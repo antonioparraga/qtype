@@ -12,7 +12,7 @@ a = [Qubit() for i in range(15)]
 for i in range(1, len(a)):
     a[i].hadamard().cnot(a[i - 1])
 
-# Apply a gate to every qubity withi the array    
+# Apply a gate to every qubit within the array    
 for q in a: 
     q.not()
 
@@ -23,8 +23,7 @@ q = Qubyte()
 q.qubits_status = 12;
 
 # 11110011 same as apply not to every single qubit individually
-q.
-not ();
+q.not ();
 
 q.hadamard();  # same as apply hadamard to every single qubit individually
 q.h()  # alias of hadamard
