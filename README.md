@@ -37,9 +37,9 @@ a.status = 0  # because b is entangle, b is 1
 a.status = 1  # due to entanglement, b is 0
 
 # initialize the qubit to 1 by setting the status matrix
-a.status = [0, 1]  # status matrix
+a.status = [0, 1]  # density matrix
 
-# superposing the cubit by setting the status matrix:
+# superposing the cubit by setting its density matrix:
 a.status = [1 / sqrt(2), 1 / sqrt(2)]
 
 a.status = 0  # equivalent to a.status = [1, 0]
