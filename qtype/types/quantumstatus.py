@@ -28,17 +28,17 @@ class QuantumStatus:
 
     def __init__(self, status=None, number_of_qubits=None):
         if type(status) == list and len(status) == 2:
-            self.qubits_status = [status]
+            self.density_matrixes = [status]
         elif type(status) == int:
-            self.qubits_status = self.transform_to_qubits_density_matrixes(status)
+            self.density_matrixes = self.transform_to_qubits_density_matrixes(status)
         else:
             raise QuantumStatusException
 
         if number_of_qubits is not None:
-            if number_of_qubits > len(self.qubits_status):
-                for i in range(len(self.qubits_status), number_of_qubits):
-                    self.qubits_status.insert(0, self.CONST_ZERO)
-            elif number_of_qubits < len(self.qubits_status):
+            if number_of_qubits > len(self.density_matrixes):
+                for i in range(len(self.density_matrixes), number_of_qubits):
+                    self.density_matrixes.insert(0, self.CONST_ZERO)
+            elif number_of_qubits < len(self.density_matrixes):
                 raise QuantumIndexOutOfBoundsException
 
     def transform_to_qubits_density_matrixes(self, status: int):
@@ -52,8 +52,18 @@ class QuantumStatus:
         return density_matrixes
 
     def qubits_count(self):
-        return len(self.qubits_status)
+        return len(self.density_matrixes)
 
     @property
-    def qubits_status(self):
-        return self.qubits_status
+    def density_matrixes(self):
+        return self.density_matrixes
+
+    def read(self):
+        return self.collapse()
+
+    def collapse(self):
+        pass
+
+    def to_bloch(self):
+        pass
+

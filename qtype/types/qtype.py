@@ -16,6 +16,7 @@ class QType:
 
     def __init__(self, status=None):
         self.status = status
+        self.is_collapsed = False
 
     @property
     def status(self):
@@ -32,7 +33,8 @@ class QType:
         return self.collapse()
 
     def collapse(self):
-        pass
+        self.is_collapsed = True
+        return self._status.collapse()
 
     def __int__(self):
         return self.collapse()
