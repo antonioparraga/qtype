@@ -10,16 +10,7 @@
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
 
-from qtype.circuit.circuit import Circuit
-from qtype.circuit.circuitcommand import CircuitCommand
-from qtype.gates.quantumgate import QuantumGate
 
+class QuantumIndexOutOfBoundsException(Exception):
 
-class GateCommand(CircuitCommand):
-
-    def __init__(self, gate: QuantumGate):
-        self.gate = gate
-
-    def execute(self, circuit: Circuit):
-        circuit.add_gate(self.gate)
-
+    pass

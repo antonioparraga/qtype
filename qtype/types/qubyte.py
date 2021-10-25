@@ -11,8 +11,13 @@
 # that they have been altered from the originals.
 
 from qtype.types.qtype import QType
+from qtype.types.quantumstatus import QuantumStatus
 
 
 class Qubyte(QType):
 
-    pass
+    def __init__(self, status=None):
+        if status is None:
+            self.status = QuantumStatus(0, 8)
+        else:
+            super(status)

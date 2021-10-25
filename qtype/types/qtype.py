@@ -10,11 +10,9 @@
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
 from qtype.types.quantumstatus import QuantumStatus
-from typing import TypeVar, Generic
 
-T = TypeVar('T')
 
-class QType(Generic[T]):
+class QType:
 
     def __init__(self, status=None):
         if type(status) == QuantumStatus:
@@ -38,5 +36,3 @@ class QType(Generic[T]):
 
     def __int__(self):
         return self.collapse()
-
-

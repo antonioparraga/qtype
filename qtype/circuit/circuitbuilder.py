@@ -17,7 +17,7 @@ class CircuitBuilder:
     def __init__(self):
         self.commands = []
 
-    def addCommand(self, command: CircuitCommand):
+    def add_command(self, command: CircuitCommand):
         self.commands.append(command)
 
     def build(self, circuit):

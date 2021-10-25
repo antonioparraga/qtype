@@ -20,9 +20,8 @@ class Circuit:
     def execute(self):
         pass
 
-    def addGate(self, gate):
-
-        gate.qtype
+    def add_gate(self, gate):
+        pass
 
 
 
