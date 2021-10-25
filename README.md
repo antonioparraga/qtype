@@ -32,8 +32,7 @@ q.h()  # alias of hadamard
 a, b, c = Qubit()
 
 a.qubits_status = 1  # setting the status of first qubit to 1
-b.qubits_status = a.
-not ()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
+b.qubits_status = a.not ()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
 a.qubits_status = 0  # because b is entangle, b is 1
 a.qubits_status = 1  # due to entanglement, b is 0
 
