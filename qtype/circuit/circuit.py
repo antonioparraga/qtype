@@ -9,9 +9,18 @@
 # Any modifications or derivative works of this code must retain this
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
-from qtype.types.qtype import QType
 
+class Circuit:
 
-class Qubit(QType):
+    def __init__(self):
+        pass
 
-    pass
+    def execute(self):
+        pass
+
+    def addGate(self, gate):
+        pass
+
+    def removeGate(self, gate):
+        pass
+

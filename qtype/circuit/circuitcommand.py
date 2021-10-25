@@ -9,9 +9,17 @@
 # Any modifications or derivative works of this code must retain this
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
-from qtype.types.qtype import QType
+
+from abc import ABC, abstractmethod
+
+from qtype.circuit.circuit import Circuit
 
 
-class Qubit(QType):
+class CircuitCommand(ABC):
 
-    pass
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def execute(self, circuit: Circuit):
+        pass

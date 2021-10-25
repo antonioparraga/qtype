@@ -9,9 +9,12 @@
 # Any modifications or derivative works of this code must retain this
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
-from qtype.types.qtype import QType
 
+class QuantumStatus:
 
-class Qubit(QType):
+    def __init__(self, status=None):
+        if type(status) == list:
+            self.status = status
+        elif type(status) == int:
+            self.status = status
 
-    pass

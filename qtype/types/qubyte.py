@@ -10,6 +10,9 @@
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
 
-class Qubyte:
+from qtype.types.qtype import QType
+
+
+class Qubyte(QType):
 
     pass

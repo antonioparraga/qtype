@@ -9,9 +9,17 @@
 # Any modifications or derivative works of this code must retain this
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
-from qtype.types.qtype import QType
+from qtype.circuit.circuitcommand import CircuitCommand
 
 
-class Qubit(QType):
+class CircuitBuilder:
 
-    pass
+    def __init__(self):
+        self.commands = []
+
+    def addCommand(self, command: CircuitCommand):
+        self.commands.append(command)
+
+    def build(self, circuit):
+        for command in self.commands:
+            command
