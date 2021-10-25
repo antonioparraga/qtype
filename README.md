@@ -5,33 +5,40 @@ Framework To Ease Operating with Quantum Computers
 
 ```python
 
+#define an array of 15 cubits:
 a = [Qubit() for i in range(15)]
 
-for i in range(0, len(a)):
+#Iterate every cubit, superposing and entangling each one with the previous one:
+for i in range(1, len(a)):
     a[i].hadamard().cnot(a[i-1])
 
-for q in a:
-    q.not()
+#Apply a gate to every qubity withi the array    
+for q in a: q.not()
 
+#Definying a Qubyte, a sequence of eight qubits operated on as a unit by a quantum computer.
 q = Qubyte()
 
-q.status = 12; # 00001100 same as initialise q0 =  0, q1 = 0, q2 = 1, q3 = 1, q4 = 0, q5 = 0 … q7 = 0
+# 00001100 same as initialise q0 =  0, q1 = 0, q2 = 1, q3 = 1, q4 = 0, q5 = 0 … q7 = 0
+q.status = 12; 
 
-q.not(); # 11110011 same as apply not to every single qubit individually
+# 11110011 same as apply not to every single qubit individually
+q.not(); 
 
 q.hadamard(); # same as apply hadamard to every single qubit individually
 q.h() # alias of hadamard
 
-a, b, c = Qubit() #initialized to 0 by default
+#define 3 qubits a, b and c (they are initialized to 0 by default)
+a, b, c = Qubit() 
 
-a.status = 1
-b.status = a.not() # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits itself.
+a.status = 1 #setting the status of first qubit to 1
+b.status = a.not() # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
 a.status = 0 # because b is entangle, b is 1
 a.status = 1 # due to entanglement, b is 0
 
-
+# initialize the qubit to 1 by setting the status matrix
 a.status = [0, 1] #status matrix
 
+#superposing the cubit by setting the status matrix:
 a.status = [ 1 / sqrt(2), 1 / sqrt(2) ]
 
 a.status = 0 #equivalent to a.status = [1, 0]
