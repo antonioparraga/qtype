@@ -9,6 +9,8 @@
 # Any modifications or derivative works of this code must retain this
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
+from qtype.errors.quantumstatusexception import QuantumStatusException
+
 
 class QuantumStatus:
 
@@ -16,5 +18,14 @@ class QuantumStatus:
         if type(status) == list:
             self.status = status
         elif type(status) == int:
-            self.status = status
+            self.status = self.transformToStatusMatrix(status)
+        else:
+            raise QuantumStatusException
 
+    def transformToStatusMatrix(self, status: int):
+        status_matrix = []
+        binary_representation = format(status, "b")
+        for bit in binary_representation:
+            status_matrix.append(int(bit))
+
+        return status_matrix

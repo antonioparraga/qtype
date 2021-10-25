@@ -11,13 +11,15 @@
 # that they have been altered from the originals.
 from qtype.circuit.circuit import Circuit
 from qtype.circuit.circuitcommand import CircuitCommand
+from qtype.gates.quantumgate import QuantumGate
+from qtype.types.qtype import QType
 
 
 class GateCommand(CircuitCommand):
 
-    def __init__(self):
-        pass
+    def __init__(self, gate: QuantumGate):
+        self.gate = gate
 
     def execute(self, circuit: Circuit):
-        pass
+        circuit.addGate(self.gate)
 

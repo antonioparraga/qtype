@@ -13,14 +13,16 @@
 class Circuit:
 
     def __init__(self):
+        self.qubits = []
+        self.grid = []
         pass
 
     def execute(self):
         pass
 
     def addGate(self, gate):
-        pass
 
-    def removeGate(self, gate):
-        pass
+        gate.qtype
+
+
 

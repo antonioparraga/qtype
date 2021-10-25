@@ -22,4 +22,4 @@ class CircuitBuilder:
 
     def build(self, circuit):
         for command in self.commands:
-            command
+            command.execute(circuit)

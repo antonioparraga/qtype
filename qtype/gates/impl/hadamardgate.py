@@ -9,14 +9,9 @@
 # Any modifications or derivative works of this code must retain this
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
-from qtype.types.qtype import QType
+from qtype.gates.quantumgate import QuantumGate
 
 
-class QuantumGate:
+class HadamardGate(QuantumGate):
 
-    def __init__(self, qtype: QType):
-        self._qtype = qtype
-
-    @property
-    def qtype(self):
-        return self._qtype
+    pass
