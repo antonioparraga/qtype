@@ -20,10 +20,10 @@ for q in a:
 q = Qubyte()
 
 # 00001100 same as initialise q0 =  0, q1 = 0, q2 = 1, q3 = 1, q4 = 0, q5 = 0 … q7 = 0
-q.qubits_status = 12;
+q.status = 12;
 
 # 11110011 same as apply not to every single qubit individually
-q.not ();
+q.not();
 
 q.hadamard();  # same as apply hadamard to every single qubit individually
 q.h()  # alias of hadamard
@@ -32,7 +32,7 @@ q.h()  # alias of hadamard
 a, b, c = Qubit()
 
 a.status = 1  # setting the status of first qubit to 1
-b.status = a.not ()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
+b.status = a.not()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
 a.status = 0  # because b is entangle, b is 1
 a.status = 1  # due to entanglement, b is 0
 
