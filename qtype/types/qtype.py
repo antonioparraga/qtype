@@ -15,18 +15,18 @@ from qtype.types.quantumstatus import QuantumStatus
 class QType:
 
     def __init__(self, status=None):
-        if type(status) == QuantumStatus:
-            self.status = status
-        else:
-            self.status = QuantumStatus(status)
+        self.status = status
 
     @property
     def status(self):
-        return self.status
+        return self._status
 
     @status.setter
     def status(self, status):
-        self.status = status
+        if type(status) == QuantumStatus:
+            self._status = status
+        else:
+            self._status = QuantumStatus(status)
 
     def read(self):
         return self.collapse()
