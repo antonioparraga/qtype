@@ -31,21 +31,21 @@ q.h()  # alias of hadamard
 # define 3 qubits a, b and c (they are initialized to 0 by default)
 a, b, c = Qubit()
 
-a.qubits_status = 1  # setting the status of first qubit to 1
-b.qubits_status = a.not ()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
-a.qubits_status = 0  # because b is entangle, b is 1
-a.qubits_status = 1  # due to entanglement, b is 0
+a.status = 1  # setting the status of first qubit to 1
+b.status = a.not ()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
+a.status = 0  # because b is entangle, b is 1
+a.status = 1  # due to entanglement, b is 0
 
 # initialize the qubit to 1 by setting the status matrix
-a.qubits_status = [0, 1]  # status matrix
+a.status = [0, 1]  # status matrix
 
 # superposing the cubit by setting the status matrix:
-a.qubits_status = [1 / sqrt(2), 1 / sqrt(2)]
+a.status = [1 / sqrt(2), 1 / sqrt(2)]
 
-a.qubits_status = 0  # equivalent to a.status = [1, 0]
-a.qubits_status = 1  # equivalent to a.status = [0, 1]
+a.status = 0  # equivalent to a.status = [1, 0]
+a.status = 1  # equivalent to a.status = [0, 1]
 
-a.qubits_status.to_bloch().draw()  # draw Bloch sphere of status
+a.status.to_bloch().draw()  # draw Bloch sphere of status
 
 c = int(a)  # that makes a to collapse to
 
