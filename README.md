@@ -13,8 +13,8 @@ for i in range(1, len(a)):
     a[i].hadamard().cnot(a[i - 1])
 
 # Apply a gate to every qubity withi the array    
-for q in a: q.
-not ()
+for q in a: 
+    q.not()
 
 # Definying a Qubyte, a sequence of eight qubits operated on as a unit by a quantum computer.
 q = Qubyte()
