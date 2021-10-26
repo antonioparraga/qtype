@@ -33,8 +33,6 @@ a, b, c = Qubit()
 
 a.status = 1  # setting the status of first qubit to 1
 b.status = a.not()  # same as a a.cnot(b) (assign variable references is equivalent to entangle cubits themselve)
-a.status = 0  # because b is entangle, b is 1
-a.status = 1  # due to entanglement, b is 0
 
 # initialize the qubit to 1 by setting the status matrix
 a.status = [0, 1]  # density matrix
